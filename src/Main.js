@@ -7,7 +7,11 @@ function Main() {
         setinputvalue(inputvalue+value)
     }
     function calculate(){
-
+       var answer=eval(inputvalue);
+       setinputvalue(answer);
+    }
+    function clear(){
+        setinputvalue('')
     }
 
     return(
@@ -19,7 +23,7 @@ function Main() {
                {/* this is a bootstrap table class */}
                    <tr>
                        <td colSpan='3'><input type="text" value={inputvalue} /></td>
-                       <td ><button >C</button></td>
+                       <td onClick={()=>{clear()}}><button >C</button></td>
                    </tr>
                    <tr>
                     <td><button onClick={()=>{display('1')}}>1</button></td>
